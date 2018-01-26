@@ -26,7 +26,7 @@ while lineStr != '':
 	lineStr = fileID.readline()
 
 # Display fftData length	
-print 'fftData length = ', len(fftData)
+print '=> fftData length\t\t= ', len(fftData)
 
 # Find the maxFrequency and its magnitude
 maxIndex = 0
@@ -38,15 +38,16 @@ for i in range(1, len(fftData)):
 		maxFrequencyMagnitude = fftData[maxIndex]
 
 samplingRate = 44100
-fftSize = 2048
+fftSize = 8192
 freqBin = samplingRate / float(fftSize)
 maxFrequency = maxIndex * freqBin
-print 'maxFrequency = ', maxFrequency
-print 'maxFrequencyMagnitude = ', maxFrequencyMagnitude
+print '=> maxFrequency\t\t\t= ', maxFrequency
+print '=> maxFrequencyMagnitude\t= ', maxFrequencyMagnitude
 
 # Plot audioFrame data
 plt.figure(1, figsize=(16, 8))
-plt.plot(fftData)
+freq_x = np.arange(fftSize/2) * freqBin
+plt.plot(freq_x, fftData)
 plt.title('fftData')
 
 plt.show()
