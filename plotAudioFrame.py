@@ -15,7 +15,7 @@ import math
 from math import pi
 
 # Open audioFrame file and display data
-fileName = 'audioFrame'
+fileName = 'data/audioFrame'
 fileID = open(fileName, 'r')
 
 audioFrame = np.empty(0)

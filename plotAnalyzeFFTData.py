@@ -15,7 +15,7 @@ import math
 from math import pi
 
 # Open audioFrame file and display data
-fileName = 'fftData'
+fileName = 'data/fftData'
 fileID = open(fileName, 'r')
 
 fftData = np.empty(0)
